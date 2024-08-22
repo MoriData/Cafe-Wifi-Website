@@ -1,0 +1,20 @@
+{% from "bootstrap5/form.html" import render_form %} {% block content %} {%
+include "header.html" %}
+
+<body>
+<div class="container">
+<div class="px-4 pt-2 my-5 rounded text-center border-bottom bg-body-secondary">
+    <h1 class="display-4 bold fst-italic">Register </h1>
+    <div class="col-lg-6 mx-auto">
+<!--Rendering the registration form here-->
+      {{render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+    </div>
+    <div class="overflow-hidden" style="max-height: 30vh;">
+      <div class="container px-5">
+        <img src="static/assets/img/no-revisions-d1ngW7SNehM-unsplash.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+{% include "footer.html" %} {% endblock %}

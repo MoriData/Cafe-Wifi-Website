@@ -1,0 +1,77 @@
+{% include "header.html" %}
+
+<div class="container">
+<div class="px-4 pt-2 my-5 rounded text-center border-bottom bg-body-secondary">
+
+
+    <div class="overflow-hidden" style="max-height: 170vh;">
+      <div class="container px-5">
+      {% if msg_sent: %}
+                        <h1>Successfully sent your message</h1>
+                        {% else: %}
+                        <h1 class="display-4 bold fst-italic">Contact Us</h1>
+                        {% endif %}
+                        <p class="lead mb-4">Got questions, suggestions, or just want to say hi? We’d love to hear from you! </p>
+                                <img src="static/assets/img/ranurte-SykNC3DC630-unsplash.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+
+                        <div class="my-1">
+                            <!-- * * * * * * * * * * * * * * *-->
+                            <!-- * * Simplified SB Contact Form for the Tutorial* *-->
+                            <form
+                                    action="{{ url_for('contact') }}"
+                                    id="contactForm"
+                                    method="post"
+                                    name="sentMessage"
+                            >
+                                <div class="form-floating">
+                                    <input
+                                            class="form-control"
+                                            id="name"
+                                            name="name"
+                                            placeholder="Enter your name..."
+                                            required
+                                            type="text"
+                                    />
+                                    <label for="name">Name</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input
+                                            class="form-control"
+                                            id="email"
+                                            name="email"
+                                            placeholder="Enter your email..."
+                                            required
+                                            type="email"
+                                    />
+                                    <label for="email">Email address</label>
+                                </div>
+
+                                <div class="form-floating">
+              <textarea
+                      class="form-control"
+                      id="message"
+                      name="message"
+                      placeholder="Enter your message here..."
+                      required
+                      style="height: 12rem"
+              ></textarea>
+                                    <label for="message">Message</label>
+                                </div>
+                                <br/>
+                                <button
+                                        class="btn btn-dark text-uppercase"
+                                        id="submitButton"
+                                        type="submit"
+                                >
+                                    Send
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% include "footer.html" %}
